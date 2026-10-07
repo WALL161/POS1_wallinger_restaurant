@@ -82,4 +82,15 @@ public class Restaurant
     {
         vegetarisch = newVegetarisch;
     }
+    
+    /*
+     print method with syntax:
+     Roma Restaurant: 80 Sitzplaetze - true
+     Akropolis Restaurant: 60 Sitzplaetze - true
+     Steakhouse Restaurant: 100 Sitzplaetze - false
+     */
+    public void printRestaurant()
+    {
+        System.out.println( name + " Restaurant: " + sitzplaetze + " Sitzplaetze" + " – " + vegetarisch);
+    }
 }
