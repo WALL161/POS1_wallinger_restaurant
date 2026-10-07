@@ -18,4 +18,19 @@ public class Restaurant
     {
         return vegetarisch;
     }
+    
+    public void setName(String newName)
+    {
+        name = newName;
+    }
+    
+    public void setSitzplaetze(int newSitzplatze)
+    {
+        sitzplaetze = newSitzplatze;
+    }
+    
+    public void setVegetarisch(boolean newVegetarisch)
+    {
+        vegetarisch = newVegetarisch;
+    }
 }
