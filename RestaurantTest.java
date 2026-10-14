@@ -35,12 +35,12 @@ public class RestaurantTest
     @Test
     public void sitzplaetze_test_ok()
     {
-        Restaurant kekü;
+        Restaurant kekue;
         
-        kekü = new Restaurant("KeKü3000", 10, false);
+        kekue = new Restaurant("KeKue3000", 10, false);
     
-        kekü.printRestaurant();
-        assertEquals(10, kekü.getSitzplaetze());
+        kekue.printRestaurant();
+        assertEquals(10, kekue.getSitzplaetze());
         
     }
     
@@ -58,5 +58,23 @@ public class RestaurantTest
         asia.printRestaurant();
         assertEquals(1, asia.getSitzplaetze());
         
+    }
+    
+    //Restaurant vegetarisch
+    //vegetarisch = true
+    //vegetarisch = false
+    //manual print test
+    @Test
+    public void vegetarisch_print_true()
+    {
+        Restaurant mikue;
+        Restaurant kakue;
+        
+        mikue = new Restaurant("MiKue", 100, true);
+        kakue = new Restaurant("KaKue", 100, false);
+        mikue.printRestaurant();
+        //Restaurant: MiKue - 100 Sitzplätze - vegetarisch
+        kakue.printRestaurant();
+        //Restaurant: KaKue - 100 Sitzplätze - nicht vegetarisch
     }
 }

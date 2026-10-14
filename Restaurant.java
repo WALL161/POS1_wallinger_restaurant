@@ -102,11 +102,12 @@ public class Restaurant
      * Restaurant: VeggieHouse - 80 Sitzplätze - vegetarisch
      * Restaurant: SteakHouse - 120 Sitzplätze - nicht vegetarisch
      */
+    
     public void printRestaurant()
     {
         //old: System.out.println( name + " Restaurant: " + sitzplaetze + " Sitzplaetze" + " – " + vegetarisch);
         //new:
-        if(vegetarisch = true)
+        if(vegetarisch == true)
         {
             System.out.println("Restaurant: " + name + " – " + sitzplaetze + " Sitzplaetze" + " – vegetarisch");
         }
