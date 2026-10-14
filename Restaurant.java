@@ -4,53 +4,53 @@ public class Restaurant
     private int sitzplaetze;
     private boolean vegetarisch;
     
-    public Restaurant(String newName, int newSitzplaetze, boolean newVegetarisch)
+    public Restaurant(String name, int sitzplaetze, boolean vegetarisch)
     {
-        setName(newName);
-        setSitzplaetze(newSitzplaetze);
-        setVegetarisch(newVegetarisch);
+        setName(name);
+        setSitzplaetze(sitzplaetze);
+        setVegetarisch(vegetarisch);
     }
     
-    public Restaurant(String newName, int newSitzplaetze)
+    public Restaurant(String name, int sitzplaetze)
     {
-        setName(newName);
-        setSitzplaetze(newSitzplaetze);
+        setName(name);
+        setSitzplaetze(sitzplaetze);
         setVegetarisch(false);
     }
     
-    public Restaurant(String newName, boolean newVegetarisch)
+    public Restaurant(String name, boolean vegetarisch)
     {
-        setName(newName);
-        setSitzplaetze(0);
-        setVegetarisch(newVegetarisch);
+        setName(name);
+        setSitzplaetze(1);
+        setVegetarisch(vegetarisch);
     }
     
-    public Restaurant(int newSitzplaetze, boolean newVegetarisch)
+    public Restaurant(int sitzplaetze, boolean vegetarisch)
     {
         setName("UNKN");
-        setSitzplaetze(newSitzplaetze);
-        setVegetarisch(newVegetarisch);
+        setSitzplaetze(sitzplaetze);
+        setVegetarisch(vegetarisch);
     }
     
-    public Restaurant(String newName)
+    public Restaurant(String name)
     {
-        setName(newName);
-        setSitzplaetze(0);
+        setName(name);
+        setSitzplaetze(1);
         setVegetarisch(false);
     }
     
-    public Restaurant(int newSitzplaetze)
+    public Restaurant(int sitzplaetze)
     {
         setName("UNKN");
-        setSitzplaetze(newSitzplaetze);
+        setSitzplaetze(sitzplaetze);
         setVegetarisch(false);
     }
     
-    public Restaurant(boolean newVegetarisch)
+    public Restaurant(boolean vegetarisch)
     {
         setName("UNKN");
-        setSitzplaetze(0);
-        setVegetarisch(newVegetarisch);
+        setSitzplaetze(1);
+        setVegetarisch(vegetarisch);
     }
     
     public String getName()
@@ -68,19 +68,27 @@ public class Restaurant
         return vegetarisch;
     }
     
-    public void setName(String newName)
+    public void setName(String name)
     {
-        name = newName;
+        this.name = name;
     }
     
-    public void setSitzplaetze(int newSitzplatze)
+    public void setSitzplaetze(int sitzplaetze)
     {
-        sitzplaetze = newSitzplatze;
+        if((sitzplaetze >= 1) && (sitzplaetze <= 1000))
+        {
+            this.sitzplaetze = sitzplaetze;
+        }
+        else
+        {
+            System.out.println("Sitzplaetze value not supported");
+            this.sitzplaetze = 1;
+        }
     }
     
-    public void setVegetarisch(boolean newVegetarisch)
+    public void setVegetarisch(boolean vegetarisch)
     {
-        vegetarisch = newVegetarisch;
+        this.vegetarisch = vegetarisch;
     }
     
     /*
@@ -89,8 +97,24 @@ public class Restaurant
      Akropolis Restaurant: 60 Sitzplaetze - true
      Steakhouse Restaurant: 100 Sitzplaetze - false
      */
+    /*
+     * Aenderung auf:
+     * Restaurant: VeggieHouse - 80 Sitzplätze - vegetarisch
+     * Restaurant: SteakHouse - 120 Sitzplätze - nicht vegetarisch
+     */
     public void printRestaurant()
     {
-        System.out.println( name + " Restaurant: " + sitzplaetze + " Sitzplaetze" + " – " + vegetarisch);
+        //old: System.out.println( name + " Restaurant: " + sitzplaetze + " Sitzplaetze" + " – " + vegetarisch);
+        //new:
+        if(vegetarisch = true)
+        {
+            System.out.println("Restaurant: " + name + " – " + sitzplaetze + " Sitzplaetze" + " – vegetarisch");
+        }
+        else
+        {
+            System.out.println("Restaurant: " + name + " – " + sitzplaetze + " Sitzplaetze" + " – nicht vegetarisch");
+        }
+        
+
     }
 }
